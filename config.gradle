@@ -1,0 +1,55 @@
+ext {
+    //android开发版本配置
+    android = [
+            compileSdkVersion: 27,
+            minSdkVersion    : 15,
+            buildToolsVersion: "27.0.3",
+            targetSdkVersion : 27,
+            versionCode      : 1,
+            applicationId    : "com.jzk.commonwms",
+            versionName      : "1.0.0"
+    ]
+    //version配置
+    version = [
+            "support-version": "27.1.1",
+            "junit-version"  : "4.12",
+            "constraint"     : "1.1.2",
+    ]
+    //依赖第三方配置
+    dependencies = [
+            //布局适配
+            "autolayout" : 'com.zhy:autolayout:1.4.5',
+            //日志
+            "logger"     : 'com.orhanobut:logger:2.1.1',
+            //multidex 用于超出方法数
+            "multidex"   : 'com.android.support:multidex:1.0.3',
+            //rxjava
+            "rxjava"     : 'io.reactivex.rxjava2:rxjava:2.1.12',
+            //rxandroid
+            "rxandroid"  : 'io.reactivex.rxjava2:rxandroid:2.0.2',
+            //retrofit
+            "retrofit"   : 'com.squareup.retrofit2:retrofit:2.4.0',
+            //converter-gson retrofit的gson转换器
+            "converter"  : 'com.squareup.retrofit2:converter-gson:2.4.0',
+            //retrofit2-rxjava2-adapter
+            "adapter"    : 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0',
+            //okhttp3:logging-interceptor
+            "interceptor": 'com.squareup.okhttp3:logging-interceptor:3.9.1',
+            //butterknife 布局绑定Id
+            "butterknife": 'com.jakewharton:butterknife:8.8.1',
+            //butterknife-compiler
+            "compiler": 'com.jakewharton:butterknife-compiler:8.8.1',
+            //constraint-layout
+            "constraint" : 'com.android.support.constraint:constraint-layout:1.1.2',
+            //gif
+            "gif"        : 'pl.droidsonroids.gif:android-gif-drawable:1.2.6',
+            //eventbus
+            "eventbus"        : 'org.greenrobot:eventbus:3.1.1',
+            //zxing
+            "zxing"        : 'com.google.zxing:core:3.3.0',
+            //versionchecklib
+            "versionchecklib"        : 'com.allenliu.versionchecklib:library:2.0.5',
+
+
+    ]
+}
