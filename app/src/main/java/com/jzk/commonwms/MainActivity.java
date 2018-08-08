@@ -1,5 +1,6 @@
 package com.jzk.commonwms;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,19 +11,18 @@ import com.jzk.commonwms.base.BaseImpActivity;
 import com.jzk.commonwms.base.Constants;
 import com.jzk.commonwms.data.LoginBean;
 import com.jzk.commonwms.data.LoginRequest;
+import com.jzk.httplibrary.rxbus.EventMsg;
+import com.jzk.httplibrary.rxbus.RxBus;
 import com.jzk.utilslibrary.PackageUtils;
 import com.jzk.utilslibrary.SpUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
+import butterknife.OnClick;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 public class MainActivity extends BaseImpActivity<MainView, MainPresenter> implements MainView {
-    @BindView(R.id.tv_login)
-    Button tvLogin;
-    @BindView(R.id.tv_request)
-    TextView tvRequest;
-    @BindView(R.id.tv_response)
-    TextView tvResponse;
 
     @Override
     public int setLayoutId() {
@@ -32,13 +32,12 @@ public class MainActivity extends BaseImpActivity<MainView, MainPresenter> imple
     @Override
     public void initBundle(Bundle savedInstanceState) {
 
-        SpUtils.getInstance().putString(this, Constants.UPDATE_URL, "http://szjuqent.imwork.net:83/");
-        SpUtils.getInstance().putString(this, Constants.LOCALE_LAUGUAGE, "zh-CN");
+
     }
 
     @Override
     public void initView() {
-        tvRequest.setText("請求");
+
     }
 
     @Override
@@ -56,20 +55,9 @@ public class MainActivity extends BaseImpActivity<MainView, MainPresenter> imple
         return this;
     }
 
-    public void login(View view) {
-        LoginRequest request = new LoginRequest();
-        request.setDeviceType(8);
-        request.setMac(PackageUtils.getMac());
-        request.setUsernameOrEmailAddress("admin");
-        request.setPassword("123qwe");
-        request.setTenancyName("Default");
-        tvRequest.setText(request.toString());
-        getPresenter().login(request);
-    }
 
     @Override
     public void login(LoginBean bean) {
-        Log.e("登录的返回---->", bean.toString());
-        tvResponse.setText(bean.toString());
+
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.jzk.commonwms">
+
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
@@ -16,7 +17,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>    <!-- 适配 -->
+    <uses-permission android:name="android.permission.GET_TASKS"/> <!-- 适配 -->
     <meta-data
         android:name="design_width"
         android:value="750"/>
@@ -25,19 +26,29 @@
         android:value="1330"/>
 
     <application
+        android:name=".base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".base.BaseApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".Main2Activity">
+        </activity>
+        <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".view.http.HttpActivity">
+        </activity>
+        <activity android:name=".view.rxbus.RxBusActivity">
+        </activity>
+        <activity android:name=".view.rxbus.RxBus2Activity">
         </activity>
     </application>
 

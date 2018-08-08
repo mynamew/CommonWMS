@@ -34,4 +34,5 @@ dependencies {
     api rootProject.ext.dependencies.rxandroid
     api rootProject.ext.dependencies.retrofit
     api rootProject.ext.dependencies.interceptor
+    implementation rootProject.ext.dependencies.rxrelay
 }

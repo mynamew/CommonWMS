@@ -49,6 +49,8 @@ ext {
             "zxing"        : 'com.google.zxing:core:3.3.0',
             //versionchecklib
             "versionchecklib"        : 'com.allenliu.versionchecklib:library:2.0.5',
+            //rxrelay
+            "rxrelay"        : 'com.jakewharton.rxrelay2:rxrelay:2.0.0',
 
 
     ]

@@ -67,6 +67,7 @@ dependencies {
     implementation rootProject.ext.dependencies.adapter
     implementation rootProject.ext.dependencies.multidex
     implementation rootProject.ext.dependencies.butterknife
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     annotationProcessor rootProject.ext.dependencies.compiler
     implementation rootProject.ext.dependencies.gif
     /**
@@ -78,4 +79,3 @@ dependencies {
     implementation project(':spinnerlibrary')
     implementation project(':mvplibrary')
 }
-

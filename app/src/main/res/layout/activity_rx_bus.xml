@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.rxbus.RxBusActivity">
+
+    <Button
+        android:id="@+id/btn_rxbus_regist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="注册Rxbus"
+        app:layout_constraintTop_toBottomOf="@id/tv_login"/>
+    <Button
+        android:id="@+id/btn_rxbus_unregist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="取消注册Rxbus"
+        app:layout_constraintTop_toBottomOf="@id/tv_login"/>
+    <TextView
+        android:id="@+id/tv_rxbus_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="收到的事件的内容"
+        app:layout_constraintTop_toBottomOf="@id/tv_login"/>
+
+</LinearLayout>
