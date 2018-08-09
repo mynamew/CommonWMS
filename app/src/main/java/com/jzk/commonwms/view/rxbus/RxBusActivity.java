@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.jzk.commonwms.Main2Activity;
 import com.jzk.commonwms.R;
 import com.jzk.httplibrary.rxbus.EventMsg;
 import com.jzk.httplibrary.rxbus.RxBus;
@@ -50,7 +49,7 @@ public class RxBusActivity extends AppCompatActivity {
                                 tvRxbusContent.setText(String.valueOf(eventMsg.getData()));
                             }
                         });
-                startActivity(new Intent(this, Main2Activity.class));
+                startActivity(new Intent(this, RxBus2Activity.class));
                 break;
             case R.id.btn_rxbus_unregist:
                 RxBus.getInstance().unregister(disposable);

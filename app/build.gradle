@@ -58,7 +58,6 @@ dependencies {
     implementation 'com.android.support:support-v4:' + rootProject.ext.version["support-version"]
     implementation 'com.android.support:appcompat-v7:' + rootProject.ext.version["support-version"]
     implementation 'com.android.support.constraint:constraint-layout:' + rootProject.ext.version["constraint"]
-
     /**
      * 各种第三方
      */
@@ -71,6 +70,10 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies.compiler
     implementation rootProject.ext.dependencies.gif
     /**
+     * 如果需要更新需要在主APP中增加versionchecklib依赖
+     */
+    implementation rootProject.ext.dependencies.versionchecklib
+    /**
      * module
      */
     implementation project(':httplibrary')
@@ -78,4 +81,5 @@ dependencies {
     implementation project(':qrcodelibrary')
     implementation project(':spinnerlibrary')
     implementation project(':mvplibrary')
+    implementation project(':versionlibrary')
 }

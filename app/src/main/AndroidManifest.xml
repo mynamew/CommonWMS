@@ -17,14 +17,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/> <!-- 适配 -->
-    <meta-data
-        android:name="design_width"
-        android:value="750"/>
-    <meta-data
-        android:name="design_height"
-        android:value="1330"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
 
+    <!-- 适配 -->
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
@@ -33,6 +28,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- android N 适配 文件存储（APK安装） -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths"/>
+        </provider>
+
+        <meta-data
+            android:name="design_width"
+            android:value="750"/>
+        <meta-data
+            android:name="design_height"
+            android:value="1330"/>
+
         <activity android:name=".view.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -40,15 +54,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity">
-        </activity>
-        <activity android:name=".MainActivity">
-        </activity>
         <activity android:name=".view.http.HttpActivity">
         </activity>
         <activity android:name=".view.rxbus.RxBusActivity">
         </activity>
         <activity android:name=".view.rxbus.RxBus2Activity">
+        </activity>
+        <activity android:name=".view.version_update.VersionUpdateActivity">
+        </activity>
+        <activity android:name=".view.spinner.SpinnerActivity">
         </activity>
     </application>
 

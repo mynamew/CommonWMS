@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.version_update.VersionUpdateActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="版本更新"
+        android:textColor="#ffff"/>
+
+    <Button
+        android:id="@+id/btn_silent_down"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:onClick="updateClick"
+        android:text="静默更新（非强制）"
+        />
+
+    <Button
+        android:id="@+id/btn_progress_down"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:onClick="updateClick"
+        android:text="带有进度条的更新(非强制)"
+        />
+    <Button
+        android:id="@+id/btn_silent_down_forced"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:onClick="updateClick"
+        android:text="静默更新（强制）"
+        />
+</LinearLayout>

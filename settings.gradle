@@ -1,1 +1,1 @@
-include ':app', ':httplibrary', ':mvplibrary', ':utilslibrary',":qrcodelibrary",":spinnerlibrary"
+include ':app', ':httplibrary', ':mvplibrary', ':utilslibrary',":qrcodelibrary",":spinnerlibrary",":versionlibrary"
