@@ -105,7 +105,14 @@ public abstract class BaseImpActivity<V extends MvpView, P extends MvpPresenter<
         //current activity  为了解决progress  dialog 弹出 context改变的问题
         currentActivity = this;
     }
-
+    /**
+     * 获取当前Activity的实例
+     *
+     * @return
+     */
+    public static Activity getCurrentActivty() {
+        return currentActivity;
+    }
 
     /*********扫码相关*****************************************************************************/
 

@@ -82,4 +82,5 @@ dependencies {
     implementation project(':spinnerlibrary')
     implementation project(':mvplibrary')
     implementation project(':versionlibrary')
+    implementation project(':imageloaderlibrary')
 }

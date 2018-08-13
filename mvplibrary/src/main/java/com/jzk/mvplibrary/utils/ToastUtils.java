@@ -36,6 +36,9 @@ public class ToastUtils {
         mToast.show();
     }
     public static void showShort(Context context, Object o) {
+        if(null==o){
+            mToast.setText("null");
+        }
         if (mToast == null) {
             mToast = Toast.makeText(context, o.toString(), Toast.LENGTH_SHORT);
 

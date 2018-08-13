@@ -9,12 +9,15 @@ import com.jzk.httplibrary.callback.OnResultCallBack;
   * create at: 2018/8/1 9:50
   */  
 public class HttpSubscriberImp<T> extends HttpSubscriber {
+    private OnResultCallBack back;
     public HttpSubscriberImp(OnResultCallBack listener) {
         super(listener);
+        this.back=listener;
     }
 
     public HttpSubscriberImp(boolean isAutoDismiss, OnResultCallBack listener) {
         super(isAutoDismiss, listener);
+        this.back=listener;
     }
 
     @Override
@@ -24,7 +27,7 @@ public class HttpSubscriberImp<T> extends HttpSubscriber {
 
     @Override
     public void onErrorDeal(Throwable e) {
-
+        back.onError(e.getMessage());
     }
 
 }

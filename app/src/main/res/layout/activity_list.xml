@@ -24,6 +24,7 @@
                 android:gravity="center"
                 android:onClick="jumpActivity"
                 android:text="网络请求(Rxjava&amp;Rertrofit)"
+                android:textAllCaps="false"
                 android:textColor="#333"
                 android:textSize="13sp"/>
 
@@ -34,6 +35,7 @@
                 android:gravity="center"
                 android:onClick="jumpActivity"
                 android:text="RxBus的使用"
+                android:textAllCaps="false"
                 android:textColor="#333"
                 android:textSize="13sp"
                 />
@@ -45,6 +47,7 @@
                 android:gravity="center"
                 android:onClick="jumpActivity"
                 android:text="更新版本"
+                android:textAllCaps="false"
                 android:textColor="#333"
                 android:textSize="13sp"
                 />
@@ -56,6 +59,7 @@
                 android:gravity="center"
                 android:onClick="jumpActivity"
                 android:text="Spinner的使用"
+                android:textAllCaps="false"
                 android:textColor="#333"
                 android:textSize="13sp"
                 />
@@ -67,6 +71,31 @@
                 android:gravity="center"
                 android:onClick="jumpActivity"
                 android:text="QrCode的使用（zxing扫码和生成）"
+                android:textAllCaps="false"
+                android:textColor="#333"
+                android:textSize="13sp"
+                />
+
+            <Button
+                android:id="@+id/tv_img"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:onClick="jumpActivity"
+                android:text="加载图片（Glide）"
+                android:textAllCaps="false"
+                android:textColor="#333"
+                android:textSize="13sp"
+                />
+
+            <Button
+                android:id="@+id/tv_rxjava_zip"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:onClick="jumpActivity"
+                android:text="合并请求(Rxjava Zip)"
+                android:textAllCaps="false"
                 android:textColor="#333"
                 android:textSize="13sp"
                 />

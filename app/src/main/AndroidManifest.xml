@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.jzk.commonwms">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -18,6 +19,12 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
+    <!-- 访问内存卡 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions"/>
 
     <!-- 适配 -->
     <application
@@ -54,7 +61,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".view.http.HttpActivity">
+        <activity android:name=".view.login.HttpActivity">
         </activity>
         <activity android:name=".view.rxbus.RxBusActivity">
         </activity>
@@ -63,6 +70,10 @@
         <activity android:name=".view.version_update.VersionUpdateActivity">
         </activity>
         <activity android:name=".view.spinner.SpinnerActivity">
+        </activity>
+        <activity android:name=".view.img.ImageLoadActivity">
+        </activity>
+        <activity android:name=".view.rxjava_zip.RxJavaZipActivity">
         </activity>
     </application>
 

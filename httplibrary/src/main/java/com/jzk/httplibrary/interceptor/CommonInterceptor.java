@@ -5,7 +5,6 @@ package com.jzk.httplibrary.interceptor;
  * create at: 2017-08-21 16:17
  */
 
-import android.content.Context;
 import android.text.TextUtils;
 
 import java.io.IOException;
@@ -18,11 +17,12 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
-/** 
-  * okhttp自定义的拦截器
-  * @author   jzk
-  * create at: 2018/8/1 10:56
-  */
+/**
+ * okhttp自定义的拦截器
+ *
+ * @author jzk
+ * create at: 2018/8/1 10:56
+ */
 public abstract class CommonInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -83,13 +83,15 @@ public abstract class CommonInterceptor implements Interceptor {
          * 当登录后的header map不为空的时候添加到请求中的header
          */
         if (null != headers && !headers.isEmpty()) {
-            /**
-             * 循环遍历map
-             */
-            Set<Map.Entry<String, String>> headersSets = headers.entrySet();
-            Iterator<Map.Entry<String, String>> iterator = headersSets.iterator();
-            while (iterator.hasNext()) {
-                builder.addHeader(iterator.next().getKey(), iterator.next().getValue());
+            try {
+                /**
+                 * 循环遍历map
+                 */
+                for(String key:headers.keySet()){
+                    builder.addHeader(key, headers.get(key));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         /**
@@ -104,30 +106,35 @@ public abstract class CommonInterceptor implements Interceptor {
 
     /**
      * 获取登录前的header
+     *
      * @return
      */
     protected abstract Map<String, String> beforeLoginHeader();
 
     /**
      * 获取登录后的header
+     *
      * @return
      */
     protected abstract Map<String, String> afterLoginHeader();
 
     /**
      * 获取APP更改的Url相对于Constants中配置的Url而言
+     *
      * @return
      */
     protected abstract String getUpdateUrl();
 
     /**
      * 获取Constants中配置的Url
+     *
      * @return
      */
     protected abstract String getBaseUrl();
 
     /**
      * 获取是否为登录Url比对的字符串
+     *
      * @return
      */
     protected abstract String getLoginUrl();

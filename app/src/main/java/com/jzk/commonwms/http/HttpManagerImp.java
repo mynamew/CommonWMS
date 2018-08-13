@@ -1,19 +1,28 @@
 package com.jzk.commonwms.http;
 
+import android.annotation.SuppressLint;
+
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.jzk.commonwms.base.Constants;
+import com.jzk.commonwms.data.zip.BaseReturnBean;
+import com.jzk.commonwms.data.zip.NoneClass;
+import com.jzk.commonwms.data.zip.StationRequest;
+import com.jzk.commonwms.data.zip.ZipResult;
 import com.jzk.commonwms.http.api.ApiService;
 import com.jzk.commonwms.http.exp.ApiException;
 import com.jzk.commonwms.http.interceptor.CommonInterceptorImp;
 import com.jzk.httplibrary.HttpManager;
 import com.jzk.httplibrary.bean.CommonResult;
 import com.jzk.httplibrary.callback.ApiServiceMethodCallBack;
+import com.jzk.utilslibrary.LogUitls;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -21,11 +30,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.jzk.commonwms.http.exp.ApiException.CODE_REQUEST_SUCCESS_EXCEPTION;
 
-/** 
-  * httpmanager的实现类
-  * @author   jzk
-  * create at: 2018/8/1 17:19
-  */  
+/**
+ * httpmanager的实现类
+ *
+ * @author jzk
+ * create at: 2018/8/1 17:19
+ */
 public class HttpManagerImp extends HttpManager {
     //实例
     private static volatile HttpManagerImp instancce = null;
@@ -110,6 +120,18 @@ public class HttpManagerImp extends HttpManager {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(s);
     }
+
+    public void toSubscribe(StationRequest request, Observer<ZipResult> s) {
+        Observable.zip(mApiService.getMoCode(new NoneClass()), mApiService.getStations(request),
+                (baseReturnBean, baseReturnBean2) ->
+                        new ZipResult(baseReturnBean2.getResult().getStations(),
+                                baseReturnBean.getResult().getMos()))
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(s);
+    }
+
     @Override
     public <T, A> void httpManagerRequest(Observer<T> subscriber, ApiServiceMethodCallBack<T, A> callBack) {
         try {

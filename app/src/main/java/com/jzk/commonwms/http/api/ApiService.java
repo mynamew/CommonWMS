@@ -3,10 +3,16 @@ package com.jzk.commonwms.http.api;
 
 import com.jzk.commonwms.data.LoginBean;
 import com.jzk.commonwms.data.LoginRequest;
+import com.jzk.commonwms.data.zip.BaseReturnBean;
+import com.jzk.commonwms.data.zip.InjectMoldBean;
+import com.jzk.commonwms.data.zip.NoneClass;
+import com.jzk.commonwms.data.zip.StationRequest;
 import com.jzk.httplibrary.bean.CommonResult;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 /**
  * retrofit 的网络请求api
@@ -30,4 +36,33 @@ public interface ApiService {
      */
     @POST("api/Account/ClientLogin")
     Observable<CommonResult<LoginBean>> login(@Body LoginRequest bean);
+
+    /**
+     * 工位选择
+     *
+     * @param request
+     * @return
+     */
+    @POST("api/services/productionplan/OnWipMaterial/GetStations")
+    Observable<BaseReturnBean> getStations(@Body StationRequest request);
+
+    /**
+     * 获取注塑机
+     *
+     * @param eqpTypeCode
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("api/services/productionplan/OnWipMaterial/GetInjectionMoldings")
+    Observable<CommonResult<InjectMoldBean>> getInjectMatchine(@Field("EqpTypeCode") String eqpTypeCode);
+
+    /**
+     * 工单代码
+     *
+     * @param noneClass
+     * @return
+     */
+
+    @POST("api/services/productionplan/OnWipMaterial/GetMoCode")
+    Observable<BaseReturnBean> getMoCode(@Body NoneClass noneClass);
 }

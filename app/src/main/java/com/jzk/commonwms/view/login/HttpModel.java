@@ -1,4 +1,4 @@
-package com.jzk.commonwms.view.http;
+package com.jzk.commonwms.view.login;
 
 import com.jzk.commonwms.data.LoginBean;
 import com.jzk.commonwms.data.LoginRequest;

@@ -1,4 +1,4 @@
-package com.jzk.commonwms.view.http;
+package com.jzk.commonwms.view.login;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -40,8 +40,7 @@ public class HttpActivity extends BaseImpActivity<HttpView, HttpPresenter> imple
 
     @Override
     public void initBundle(Bundle savedInstanceState) {
-        SpUtils.getInstance().putString(this, Constants.UPDATE_URL, "http://szjuqent.imwork.net:83/");
-        SpUtils.getInstance().putString(this, Constants.LOCALE_LAUGUAGE, "zh-CN");
+        SpUtils.getInstance().putString(this, Constants.UPDATE_URL, "http://szjuqent.imwork.net:91/");
     }
 
     @Override
@@ -69,6 +68,7 @@ public class HttpActivity extends BaseImpActivity<HttpView, HttpPresenter> imple
     @Override
     public void login(LoginBean bean) {
         Log.e("登录的返回---->", bean.toString());
+        SpUtils.getInstance().putString(this, Constants.AUTHORIZATION, bean.getToken());
         tvResponse.setText(bean.toString());
     }
 
