@@ -106,14 +106,7 @@ public abstract class BaseImpActivity<V extends MvpView, P extends MvpPresenter<
         currentActivity = this;
     }
 
-    /**
-     * 获取当前Activity的实例
-     *
-     * @return
-     */
-    public static Activity getCurrentActivty() {
-        return currentActivity;
-    }
+
     /*********扫码相关*****************************************************************************/
 
     /**
