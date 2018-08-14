@@ -23,7 +23,7 @@
                 android:layout_height="44dp"
                 android:gravity="center"
                 android:onClick="jumpActivity"
-                android:text="网络请求(Rxjava&amp;Rertrofit)"
+                android:text="登录(Rxjava&amp;Rertrofit)"
                 android:textAllCaps="false"
                 android:textColor="#333"
                 android:textSize="13sp"/>
@@ -89,12 +89,12 @@
                 />
 
             <Button
-                android:id="@+id/tv_rxjava_zip"
+                android:id="@+id/tv_rxjava"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:gravity="center"
                 android:onClick="jumpActivity"
-                android:text="合并请求(Rxjava Zip)"
+                android:text="Rxjava 操作符"
                 android:textAllCaps="false"
                 android:textColor="#333"
                 android:textSize="13sp"

@@ -6,9 +6,8 @@ import android.view.View;
 
 import com.jzk.commonwms.R;
 import com.jzk.commonwms.base.BaseImpNoMvpActivity;
-import com.jzk.commonwms.view.login.HttpActivity;
 import com.jzk.commonwms.view.img.ImageLoadActivity;
-import com.jzk.commonwms.view.rxjava_zip.RxJavaZipActivity;
+import com.jzk.commonwms.view.login.HttpActivity;
 import com.jzk.commonwms.view.spinner.SpinnerActivity;
 import com.jzk.commonwms.view.version_update.VersionUpdateActivity;
 import com.jzk.mvplibrary.utils.ToastUtils;
@@ -60,8 +59,8 @@ public class ListActivity extends BaseImpNoMvpActivity {
             case R.id.tv_img:
                 startActivity(new Intent(this, ImageLoadActivity.class));
                 break;
-            case R.id.tv_rxjava_zip:
-                startActivity(new Intent(this, RxJavaZipActivity.class));
+            case R.id.tv_rxjava:
+                startActivity(new Intent(this, RxjavaActivity.class));
                 break;
             default:
                 break;

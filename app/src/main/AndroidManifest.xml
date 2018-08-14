@@ -75,6 +75,8 @@
         </activity>
         <activity android:name=".view.rxjava_zip.RxJavaZipActivity">
         </activity>
+        <activity android:name=".view.RxjavaActivity">
+        </activity>
     </application>
 
 </manifest>
