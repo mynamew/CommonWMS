@@ -27,7 +27,7 @@ android {
             //APK 包名
             android.applicationVariants.all { variant ->
                 variant.outputs.all {
-                    outputFileName = "hb_wms_${variant.versionName}.apk"
+                    outputFileName = "common_wms_${variant.versionName}.apk"
                 }
             }
         }
@@ -61,7 +61,6 @@ dependencies {
     /**
      * 各种第三方
      */
-    implementation rootProject.ext.dependencies.autolayout
     implementation rootProject.ext.dependencies.converter
     implementation rootProject.ext.dependencies.adapter
     implementation rootProject.ext.dependencies.multidex
@@ -83,4 +82,8 @@ dependencies {
     implementation project(':mvplibrary')
     implementation project(':versionlibrary')
     implementation project(':imageloaderlibrary')
+    /**
+     * 屏幕适配
+     */
+    implementation 'me.jessyan:autosize:0.7.0'
 }

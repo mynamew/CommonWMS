@@ -6,11 +6,12 @@ import android.view.View;
 
 import com.jzk.commonwms.R;
 import com.jzk.commonwms.base.BaseImpNoMvpActivity;
+import com.jzk.commonwms.view.autosize.AutoSizeActivity;
 import com.jzk.commonwms.view.img.ImageLoadActivity;
 import com.jzk.commonwms.view.login.HttpActivity;
 import com.jzk.commonwms.view.spinner.SpinnerActivity;
 import com.jzk.commonwms.view.version_update.VersionUpdateActivity;
-import com.jzk.mvplibrary.utils.ToastUtils;
+import com.jzk.commonwms.view.zxing.ZxingActivity;
 
 public class ListActivity extends BaseImpNoMvpActivity {
 
@@ -46,12 +47,7 @@ public class ListActivity extends BaseImpNoMvpActivity {
                 startActivity(new Intent(this, VersionUpdateActivity.class));
                 break;
             case R.id.tv_update_qrcode:
-                scan(1001, new ScanQRCodeResultListener() {
-                    @Override
-                    public void scanSuccess(int requestCode, String result) {
-                        ToastUtils.showShort(ListActivity.this, result);
-                    }
-                });
+                startActivity(new Intent(this, ZxingActivity.class));
                 break;
             case R.id.tv_update_spinner:
                 startActivity(new Intent(this, SpinnerActivity.class));
@@ -61,6 +57,9 @@ public class ListActivity extends BaseImpNoMvpActivity {
                 break;
             case R.id.tv_rxjava:
                 startActivity(new Intent(this, RxjavaActivity.class));
+                break;
+            case R.id.tv_autosize:
+                startActivity(new Intent(this, AutoSizeActivity.class));
                 break;
             default:
                 break;

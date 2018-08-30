@@ -13,6 +13,7 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Selection;
@@ -31,7 +32,7 @@ import com.jzk.mvplibrary.presenter.MvpPresenter;
 import com.jzk.mvplibrary.utils.ToastUtils;
 import com.jzk.mvplibrary.view.MvpView;
 import com.jzk.mvplibrary.view.iml.MvpBaseView;
-import com.zhy.autolayout.AutoLayoutActivity;
+
 
 /**
  * Activity的基类
@@ -42,7 +43,7 @@ import com.zhy.autolayout.AutoLayoutActivity;
  * @author: timi
  * create at: 2018/7/30 11:01
  */
-public abstract class BaseActivity extends AutoLayoutActivity implements MvpBaseView {
+public abstract class BaseActivity extends AppCompatActivity implements MvpBaseView {
 
 
     public String TAG = "";
